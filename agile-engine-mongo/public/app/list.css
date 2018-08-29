@@ -1,0 +1,25 @@
+
+.panel {
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    border: none !important
+
+}
+.result-list {
+    list-style: none;
+}
+.panel-title {
+    margin-bottom: 10px;
+}
+.text-success {
+    color: black;
+    background-color: #EA745B !important
+}
+
+.text-credit{
+    color: black;
+    background-color: #6ECF72 !important
+}
+.list {
+    padding: 20px;
+}
