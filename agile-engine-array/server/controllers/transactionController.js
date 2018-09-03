@@ -1,7 +1,7 @@
 const Transaction = require(`${process.env.PWD}/server/models/transaction.js`)
 const _ = require('lodash')
 
-const history = []
+var history = []
 for(var i = 0 ; i < history.length; i ++){
     console.log(history[i])
 }
@@ -27,16 +27,17 @@ function debit(req, res, next){
     })
     const total = getTotal()
     console.log(total)
-    if(req.body.aumount < 100){
-        console.log('es menor')
-    }
+    // if(req.body.aumount < 100){
+    //     console.log('es menor')
+    // }
     // history.push(transaction)
     // res.send('Se debito con exito')
     // console.log('aaa',history)
 }
 
 function getTotal() {
-    return _.chain(history)
+    console.log(history)
+    const result = _.chain(history)
     .filter(function(element){
         return element.type == 'credit'
     })
@@ -46,6 +47,9 @@ function getTotal() {
     .reduce(function(prev,element,index){
         return prev + element
     })
+    .value();
+    return result
+
 }
 
  
